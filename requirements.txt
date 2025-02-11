@@ -9,9 +9,9 @@ hachoir
 heroku3
 motor
 pillow
-httpx==0.25.2
+httpx
 psutil
-py-tgcalls==0.9.7
+py-tgcalls
 pykeyboard
 python-dotenv
 pyyaml
