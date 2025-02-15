@@ -17,7 +17,7 @@ BOT_TOKEN = getenv("BOT_TOKEN",)
 BOT_USERNAME = getenv("BOT_USERNAME" , "Systumm_music_bot")
 
 # Get Your repo
-REPO_LINK = getenv("REPO_LINK" , "https://t.me/BRANDED_PAID_CC")
+REPO_LINK = getenv("REPO_LINK" , "https://t.me/tamilchatting2050")
 
 # Don't Add style font 
 BOT_NAME = getenv("BOT_NAME" , "Sytumm")
