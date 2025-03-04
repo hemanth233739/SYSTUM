@@ -4,7 +4,7 @@ import importlib
 from pyrogram import idle
 
 import config
-from SYSTUM import LOGGER, app, userbot
+from SYSTUM import LOGGER, app, userbot, nx
 from SYSTUM.core.call import KING
 from SYSTUM.misc import sudo
 from SYSTUM.plugins import ALL_MODULES
@@ -33,6 +33,11 @@ async def init():
     except:
         pass
     await app.start()
+    try:
+        from Nexgram import Client
+        await nx.start()
+        await nx.send_message(-1001539362601, "I'm started successfully!. Try [Nexgram.py](https://pypi.org/project/Nexgram.py/)", parse_mode="Markdown")
+    except: pass
     for all_module in ALL_MODULES:
         importlib.import_module("SYSTUM.plugins" + all_module)
     LOGGER("SYSTUM.plugins").info("Successfully Imported Modules...")
