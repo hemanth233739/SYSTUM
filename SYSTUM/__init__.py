@@ -28,4 +28,4 @@ YouTube = YouTubeAPI()
 try:
   from Nexgram import Client
   nx = Client("Master", config.BOT_TOKEN)
-except: pass
+except: nx = None
