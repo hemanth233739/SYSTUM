@@ -7,7 +7,7 @@ import config
 from .logging import LOGGER
 
 dirr()
-git()
+# git()
 dbb()
 heroku()
 
@@ -24,10 +24,10 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
-import logging 
+
 try:
   from Nexgram import Client
   nx = Client("Master", config.BOT_TOKEN)
 except Exception as e:
   nx = None
-  logging.error(e)
+  LOGGER("Nexgram - init").error(e)
