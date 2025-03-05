@@ -35,11 +35,10 @@ async def init():
     await app.start()
     try:
         from Nexgram import Client
-        await nx.start()
+        await nx.start(False)
         await nx.send_message(-1001539362601, "I'm started successfully!. Try [Nexgram.py](https://pypi.org/project/Nexgram.py/)", parse_mode="Markdown")
     except Exception as e:
-        import logging 
-        logging.error(e)
+        LOGGER("Nexgram.py").error(e)
     for all_module in ALL_MODULES:
         importlib.import_module("SYSTUM.plugins" + all_module)
     LOGGER("SYSTUM.plugins").info("Successfully Imported Modules...")
