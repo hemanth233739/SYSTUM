@@ -9,9 +9,9 @@ hachoir
 heroku3
 motor
 pillow
-httpx
+httpx==0.25.2
 psutil
-py-tgcalls
+py-tgcalls==0.9.7
 pykeyboard
 python-dotenv
 pyyaml
@@ -23,5 +23,6 @@ unidecode
 yt-dlp
 youtube-search
 youtube-search-python
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.23.zip
 Kurigram
 Nexgram.py>=0.0.22
