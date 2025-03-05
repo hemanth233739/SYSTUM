@@ -36,7 +36,7 @@ async def init():
     try:
         from Nexgram import Client
         await nx.start(False)
-        await nx.send_message(-1001539362601, "I'm started successfully!. Try [Nexgram.py](https://pypi.org/project/Nexgram.py/)", parse_mode="Markdown")
+        await nx.send_message(-1002367989146, "I'm started successfully!. Try [Nexgram.py](https://pypi.org/project/Nexgram.py/)", parse_mode="Markdown")
     except Exception as e:
         LOGGER("Nexgram.py").error(e)
     for all_module in ALL_MODULES:
