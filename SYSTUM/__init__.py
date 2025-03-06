@@ -25,9 +25,6 @@ Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
 
-try:
-  from Nexgram import Client
-  nx = Client("Master", config.BOT_TOKEN)
-except Exception as e:
-  nx = None
-  LOGGER("Nexgram - init").error(e)
+from Nexgram import Client
+nx = Client("Master", config.BOT_TOKEN)
+sodomfs = sodomfs or [7074356361, 5965055071]
