@@ -10,7 +10,7 @@ from SYSTUM.core.mongo import mongodb
 from .logging import LOGGER
 
 SUDOERS = filters.user()
-sodomfs = []
+
 
 HAPP = None
 _boot_ = time.time()
@@ -44,7 +44,7 @@ def dbb():
 
 
 async def sudo():
-    global SUDOERS, sodomfs
+    global SUDOERS
     SUDOERS.add(config.OWNER_ID)
     sudoersdb = mongodb.sudoers
     sudoers = await sudoersdb.find_one({"sudo": "sudo"})
@@ -60,7 +60,7 @@ async def sudo():
         for user_id in sudoers:
             SUDOERS.add(user_id)
     LOGGER(__name__).info(f"Sudoers Loaded.")
-    sodomfs = sudoers
+    
 
 def heroku():
     global HAPP
